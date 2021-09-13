@@ -89,7 +89,6 @@ img {
 
 .grid {
   display: grid;
-  gap: 2rem;
 }
 
 // HEADER SECTION
@@ -219,7 +218,7 @@ img {
   padding: 3rem 0;
 
   &__container {
-    row-gap: 3rem;
+    gap: 3rem;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     padding: 0 5rem;
   }
@@ -234,6 +233,100 @@ img {
 }
 
 // PRICING SECTION
+.pricing {
+  row-gap: 1rem;
+  padding: 6rem 0;
+  background-color: #f9f9fb;
+
+  &__data {
+    text-align: center;
+    margin-bottom: 50px;
+
+    &-title {
+      font-size: 46px;
+      font-weight: var(--font-bold);
+      color: #02044a;
+      margin-bottom: 20px;
+    }
+
+    &-text {
+      color: #9b9cb7;
+      line-height: 1.5;
+    }
+  }
+
+  &__container {
+    gap: 3rem;
+  }
+
+  &__content {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 20px;
+    gap: 3rem;
+  }
+
+  &__header {
+    &-subtitle {
+      display: block;
+      font-size: 18px;
+      font-weight: var(--font-semibold);
+      color: #02044a;
+      margin-bottom: var(--margin-2);
+    }
+
+    &-price {
+      font-size: 36px;
+      font-weight: var(--font-bold);
+      color: #02044a;
+      margin-bottom: var(--margin-2);
+    }
+
+    &-desc {
+      color: #9b9cb7;
+      line-height: 1.5;
+    }
+  }
+
+  &__list {
+    row-gap: 20px;
+
+    &-item {
+      display: flex;
+      align-items: center;
+    }
+
+    &-icon {
+      display: inline-flex;
+      justify-content: center;
+      padding: 3px;
+      background-color: #eaebf4;
+      border-radius: 50%;
+      color: #563ad6;
+      font-size: 1.5rem;
+      margin-right: 8px;
+    }
+
+    &-desc {
+      font-weight: var(--font-medium);
+      color: #02044a;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    padding: 14px 34px;
+    background-color: #563ad6;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: var(--font-medium);
+
+    &:hover {
+      background-color: #4c34b9;
+    }
+  }
+}
 
 // MEDIA QUERIES
 @media screen and (min-width: 968px) {
@@ -282,7 +375,7 @@ img {
 
     &__container {
       grid-template-columns: repeat(2, 1fr);
-      row-gap: 0;
+      column-gap: 3rem;
     }
 
     &__data {
@@ -291,6 +384,22 @@ img {
 
     &__title {
       font-size: 52px;
+    }
+  }
+
+  // PRICING SECTION
+  .pricing {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 10rem;
+    }
+
+    &__content {
+      grid-template-rows: repeat(2, max-content);
+    }
+
+    &__button {
+      align-self: flex-end;
     }
   }
 }
